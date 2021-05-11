@@ -454,6 +454,18 @@ $(function() {
     },
   });
 
+  $('[data-fancybox="gallery01"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "share",
+      "slideShow",
+      "thumbs",
+      "close"
+    ],
+  });
   $('[data-fancybox="gallery"]').fancybox({
     animationEffect: "zoom-in-out",
     animationDuration: 600,
@@ -474,6 +486,7 @@ $(function() {
     buttons: [
       "zoom",
       "slideShow",
+      "share",
       "thumbs",
       "close",
     ],
@@ -704,7 +717,19 @@ $(function() {
         },
       },
     });
-
+    
+    $('[data-fancybox="gallery01"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "share",
+        "slideShow",
+        "thumbs",
+        "close"
+      ],
+    });
     $('[data-fancybox="gallery"]').fancybox({
       animationEffect: "zoom-in-out",
       animationDuration: 600,
@@ -716,6 +741,7 @@ $(function() {
         "close"
       ],
     });
+
 
     $('[data-fancybox="diplome"]').fancybox({
       animationEffect: "zoom-in-out",
