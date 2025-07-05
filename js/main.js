@@ -8,17 +8,17 @@ Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=Mille
 p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
 
 ------------------------------------------- */
-$(function() {
+$(function () {
 
   "use strict";
 
   // swup js
-  const options = {
-    containers: ["#swup", "#swupMenu"],
-    animateHistoryBrowsing: true,
-  };
+  // const options = {
+  //   containers: ["#swup", "#swupMenu"],
+  //   animateHistoryBrowsing: true,
+  // };
 
-  const swup = new Swup(options);
+  // const swup = new Swup(options);
 
   // scrollbar
   Scrollbar.use(OverscrollPlugin);
@@ -34,14 +34,14 @@ $(function() {
   });
 
   // page loading
-  $(document).ready(function() {
+  $(document).ready(function () {
     anime({
       targets: '.art-preloader .art-preloader-content',
       opacity: [0, 1],
       delay: 200,
       duration: 600,
       easing: 'linear',
-      complete: function(anim) {
+      complete: function (anim) {
 
       }
     });
@@ -51,7 +51,7 @@ $(function() {
       delay: 2200,
       duration: 400,
       easing: 'linear',
-      complete: function(anim) {
+      complete: function (anim) {
         $('.art-preloader').css('display', 'none');
       }
     });
@@ -87,14 +87,14 @@ $(function() {
     targets: '.art-counter',
     delay: 1300,
     opacity: [1, 1],
-    complete: function(anim) {
-      $('.art-counter').each(function() {
+    complete: function (anim) {
+      $('.art-counter').each(function () {
         $(this).prop('Counter', 0).animate({
           Counter: $(this).text()
         }, {
           duration: 2000,
           easing: 'linear',
-          step: function(now) {
+          step: function (now) {
             $(this).text(Math.ceil(now));
           }
         });
@@ -109,7 +109,7 @@ $(function() {
     duration: 1400,
     delay: 2500,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
         circle.setText('');
@@ -127,7 +127,7 @@ $(function() {
     duration: 1400,
     delay: 2600,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
         circle.setText('');
@@ -145,7 +145,7 @@ $(function() {
     duration: 1400,
     delay: 2700,
     trailWidth: 7,
-    step: function(state, circle) {
+    step: function (state, circle) {
       var value = Math.round(circle.value() * 100);
       if (value === 0) {
         circle.setText('');
@@ -314,7 +314,7 @@ $(function() {
 
 
   // Contact form
-  $('.art-input').keyup(function() {
+  $('.art-input').keyup(function () {
     if ($(this).val()) {
       $(this).addClass('art-active');
     } else {
@@ -322,12 +322,12 @@ $(function() {
     }
   });
 
-  $("#form").submit(function() {
+  $("#form").submit(function () {
     $.ajax({
       type: "POST",
       url: "mail.php",
       data: $(this).serialize()
-    }).done(function() {
+    }).done(function () {
 
       var tl = anime.timeline({
         easing: 'easeOutExpo',
@@ -349,7 +349,7 @@ $(function() {
   });
 
   // portfolio filter
-  $('.art-filter a').on('click', function() {
+  $('.art-filter a').on('click', function () {
     $('.art-filter .art-current').removeClass('art-current');
     $(this).addClass('art-current');
 
@@ -519,29 +519,29 @@ $(function() {
 
   $('.current-menu-item a').clone().appendTo('.art-current-page');
 
-  $('.art-map-overlay').on('click', function() {
+  $('.art-map-overlay').on('click', function () {
     $(this).addClass('art-active');
   });
 
-  $('.art-info-bar-btn').on('click', function() {
+  $('.art-info-bar-btn').on('click', function () {
     $('.art-info-bar').toggleClass('art-active');
     $('.art-menu-bar-btn').toggleClass('art-disabled');
   });
 
-  $('.art-menu-bar-btn').on('click', function() {
+  $('.art-menu-bar-btn').on('click', function () {
     $('.art-menu-bar-btn , .art-menu-bar').toggleClass("art-active");
     $('.art-info-bar-btn').toggleClass('art-disabled');
   });
 
-  $('.art-info-bar-btn , .art-menu-bar-btn').on('click', function() {
+  $('.art-info-bar-btn , .art-menu-bar-btn').on('click', function () {
     $('.art-content').toggleClass('art-active');
   });
 
-  $('.art-curtain , .art-mobile-top-bar').on('click', function() {
+  $('.art-curtain , .art-mobile-top-bar').on('click', function () {
     $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
   });
 
-  $('.menu-item').on('click', function() {
+  $('.menu-item').on('click', function () {
     if ($(this).hasClass('menu-item-has-children')) {
       $(this).children('.sub-menu').toggleClass('art-active');
     } else {
@@ -550,7 +550,7 @@ $(function() {
   });
 
   // reinit
-  document.addEventListener("swup:contentReplaced", function() {
+  document.addEventListener("swup:contentReplaced", function () {
 
     Scrollbar.use(OverscrollPlugin);
     Scrollbar.init(document.querySelector('#scrollbar'), {
@@ -564,12 +564,12 @@ $(function() {
       continuousScrolling: true,
     });
 
-    $("#form").submit(function() {
+    $("#form").submit(function () {
       $.ajax({
         type: "POST",
         url: "mail.php",
         data: $(this).serialize()
-      }).done(function() {
+      }).done(function () {
 
         var tl = anime.timeline({
           easing: 'easeOutExpo',
@@ -597,7 +597,7 @@ $(function() {
       transitionDuration: '.6s',
     });
 
-    $('.art-filter a').on('click', function() {
+    $('.art-filter a').on('click', function () {
       $('.art-filter .art-current').removeClass('art-current');
       $(this).addClass('art-current');
 
@@ -616,13 +616,13 @@ $(function() {
       easing: 'linear',
     });
 
-    $('.art-counter').each(function() {
+    $('.art-counter').each(function () {
       $(this).prop('Counter', 0).animate({
         Counter: $(this).text()
       }, {
         duration: 2000,
         easing: 'linear',
-        step: function(now) {
+        step: function (now) {
           $(this).text(Math.ceil(now));
         }
       });
@@ -718,7 +718,7 @@ $(function() {
         },
       },
     });
-    
+
     $('[data-fancybox="gallery01"]').fancybox({
       animationEffect: "zoom-in-out",
       animationDuration: 600,
@@ -772,7 +772,7 @@ $(function() {
 
     $('.current-menu-item a').clone().prependTo('.art-current-page');
 
-    $('.menu-item').on('click', function() {
+    $('.menu-item').on('click', function () {
       if ($(this).hasClass('menu-item-has-children')) {
         $(this).children('.sub-menu').toggleClass('art-active');
       } else {
@@ -805,16 +805,16 @@ $(function() {
 
   var currentSheet = sheets.orange.appendTo($("head"));
 
-  $("a.swapColor").click(function() {
+  $("a.swapColor").click(function () {
     currentSheet.detach();
     currentSheet = (sheets[$(this).attr("data-theme")]).appendTo($("head"));
   });
 
-  $('.open-changer').click(function() {
+  $('.open-changer').click(function () {
     $('.color-change').toggleClass("active-changer");
   });
 
-  $('.art-app').click(function() {
+  $('.art-app').click(function () {
     $('.color-change').removeClass("active-changer");
   });
 
